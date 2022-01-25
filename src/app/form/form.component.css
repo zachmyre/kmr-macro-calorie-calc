@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+.container{
+    font-family: 'Staatliches', cursive;
+    height: 100%;
+    width: 100%;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+label{
+    font-weight: bold;
+}
+
+.card {
+    background-color: rgb(255, 175, 188);
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+div img{
+    height: 15vh;
+    text-align: center;
+    margin-left: 10px;
+    margin-bottom: 20px;
+
+}
+
+h2{
+    font-weight: bold;
+    font-size: 2.25em;
+} 
+
+.formMarginBottom{
+    margin-bottom: 1em !important;
+}
+

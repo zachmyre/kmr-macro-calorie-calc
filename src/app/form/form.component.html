@@ -1,0 +1,74 @@
+
+<div class="container px-5 card">
+    <div class="card-body"></div>
+  <h1>Calorie Calculator</h1>
+  <form [formGroup]="calorieForm" (ngSubmit)="onSubmitCalorie()">
+    <div class="form-group py-3">
+      <label for="male">Male: 
+        <input type="radio" formControlName='gender' value="1" class="form-control-radio">
+      </label><br>
+      <label for="female">Female: 
+        <input type="radio" formControlName='gender' value="2" class="form-control-radio">
+      </label><br>
+  <div class="form-group py-3">
+  <label for="weight">Weight: 
+    <input type="text" formControlName='weight' placeholder='Lbs' class="form-control text-center">
+  </label>
+  <div formGroupName='height' class="form-group">
+  <label for="feet">Height: 
+    <input type="text" formControlName='feet' placeholder='Ft' class="form-control text-center">
+  </label>
+  <label for="inches ml-2">Inches: 
+    <input type="text" formControlName='inches' placeholder='In' class="form-control text-center">
+  </label>
+  </div>
+  <label for="age">Age: 
+    <input type="text" formControlName='age' placeholder='Age' class="form-control text-center">
+  </label>
+  </div>
+  <div class="grouping form-group py-3">
+    <label for="lightActivity">Light Activity (1-3 days/week): 
+      <input type="radio" formControlName='activity' value="1" class="form-control-radio">
+    </label><br>
+    <label for="moderateActivity">Moderate Activity (3-5 days/week): 
+      <input type="radio" formControlName='activity' value="2" class="form-control-radio">
+    </label><br>
+    <label for="heavyActivity">Heavy Activity (6-7 days/week): 
+      <input type="radio" formControlName='activity' value="3" class="form-control-radio">
+    </label><br>
+  </div>
+  <div class="form-group">
+    <label for="weight">Deficit: 
+      <input type="text" formControlName='deficit' class="form-control">
+      <small>Example: <br>
+        -.25 (losing weight)<br>
+        .25 (gaining weight)</small>
+    </label><br>
+    <button class="btn btn-dark my-3" id='submit'>Submit</button>
+  </div>
+  <h2 *ngIf="onSubmitCalorie() > 1">Calorie Intake: <span>{{onSubmitCalorie()}}</span></h2>
+  </div>
+  </form>
+  <form [formGroup]="macroForm" (ngSubmit)="onSubmitMacro()">
+    <div class="form-group py-3">
+      <label for="carbPercentage">Carb Percentage: 
+        <input type="text" formControlName='carbPercentage' class="form-control text-center">
+      </label>
+      <label for="fatPercentage">Fat Percentage:
+        <input type="text" formControlName='fatPercentage' class="form-control text-center">
+      </label>
+      <br>
+      <button class="btn btn-dark my-3" id='submit'>Submit</button>
+      </div>
+      <div *ngIf="error" class="alert alert-dark" role="alert">
+        {{error}}
+      </div>
+    </form>
+
+    <div *ngIf="fat && carb && protein">
+      <h5 class="mb-4"><strong>Protein (g): {{protein}}</strong><br>({{proteinCalories}} calories)</h5>
+      <h5 class="mb-4"><strong>Carbs (g): {{carb}}</strong><br>({{carbCalories}} calories)</h5>
+      <h5 class="mb-4"><strong>Fats (g): {{fat}}</strong><br>({{fatCalories}} calories)</h5>
+    </div>
+
+  </div>

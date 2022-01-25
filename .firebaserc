@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kmr-calc": {
+      "hosting": {
+        "macroCalcApp": [
+          "kmr-calc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kmr-calc"
+  }
+}
