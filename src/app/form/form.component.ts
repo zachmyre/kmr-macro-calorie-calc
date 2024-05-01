@@ -25,10 +25,10 @@ export class FormComponent implements OnInit {
   fat: number = 0;
   fatCalories: number = 0;
 
-  
-  constructor(private fb: FormBuilder){  
+
+  constructor(private fb: FormBuilder){
   }
-  
+
   ngOnInit(){
     this.initializeForm();
   }
@@ -86,17 +86,17 @@ export class FormComponent implements OnInit {
       let tdee = 1.375;
       tdee = tdee * bmr;
       calDef = deficit * tdee;
-      calIntake = tdee - calDef;
+      calIntake = tdee + calDef;
     } else if (activity == 2){
       let tdee = 1.55;
       tdee = tdee * bmr;
       calDef = deficit * tdee;
-      calIntake = tdee - calDef;
+      calIntake = tdee + calDef;
     } else if (activity == 3){
       let tdee = 1.725;
       tdee = tdee * bmr;
       calDef = deficit * tdee;
-      calIntake = tdee - calDef;
+      calIntake = tdee + calDef;
     }
 
     this.calories = Math.round(calIntake);
@@ -119,6 +119,6 @@ export class FormComponent implements OnInit {
 
   }
 
-  
+
 
 }
